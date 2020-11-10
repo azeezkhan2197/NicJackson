@@ -1,0 +1,73 @@
+{
+    "go.alternateTools": {
+    
+    },
+    "go.delveConfig": {
+
+        "dlvLoadConfig": {
+            "followPointers": true,
+            "maxVariableRecurse": 1,
+            "maxStringLen": 64,
+            "maxArrayValues": 64,
+            "maxStructFields": -1
+        },
+        "apiVersion": 2,
+        "showGlobalVariables": false
+    },
+    "go.editorContextMenuCommands": {
+
+        "toggleTestFile": true,
+        "addTags": true,
+        "removeTags": false,
+        "testAtCursor": true,
+        "testFile": false,
+        "testPackage": false,
+        "generateTestForFunction": true,
+        "generateTestForFile": false,
+        "generateTestForPackage": false,
+        "addImport": true,
+        "testCoverage": true,
+        "playground": true,
+        "debugTestAtCursor": true
+    },
+    "go.enableCodeLens": {
+
+        "references": false,
+        "runtest": true
+    },
+    "go.gopath": "",
+    "go.goroot": "",
+    "go.languageServerExperimentalFeatures": {
+
+        "diagnostics": true,
+        "documentLink": true
+    },
+    "go.languageServerFlags": [
+    
+    ],
+    "go.liveErrors": {
+
+        "enabled": false,
+        "delay": 500
+    },
+    "go.overwriteGoplsMiddleware": {
+    
+    },
+    "go.playground": {
+
+        "openbrowser": true,
+        "share": true,
+        "run": true
+    },
+    "go.testEnvVars": {
+    
+    },
+    "go.testFlags": [],
+    "go.testTags": "",
+    "go.toolsEnvVars": {
+    
+    },
+    "html.format.contentUnformatted": "",
+    "html.format.unformatted": "",
+    "go.formatTool": "gofmt"
+}
