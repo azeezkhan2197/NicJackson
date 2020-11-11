@@ -34,10 +34,12 @@ func main() {
 
 	postRouter := sm.Methods(http.MethodPost).Subrouter()
 	postRouter.HandleFunc("/", ph.AddProduct)
+	// Use is used to call the middleware validation function
 	postRouter.Use(ph.MiddleWareProduct)
 
 	putRouter := sm.Methods(http.MethodPut).Subrouter()
 	putRouter.HandleFunc("/{id:[0-9]+}", ph.UpdateProduct)
+	// Use is used to call the middleware validation function
 	putRouter.Use(ph.MiddleWareProduct)
 
 	//sm.Handle("/", ph)
