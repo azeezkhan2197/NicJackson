@@ -3,6 +3,7 @@ package main
 import (
 	handlers "NicJackson/handlers"
 	"context"
+	"github.com/gorilla/mux"
 	"log"
 	"net/http"
 	"os"
@@ -22,10 +23,22 @@ func main() {
 
 	//assigning a products handler
 	ph := handlers.NewProducts(l)
-	//create a servemux
-	sm := http.NewServeMux()
+	//create a new MUX and registers handlers
+	sm := mux.NewRouter()
 
-	sm.Handle("/", ph)
+	//creating a get router
+	getRouter := sm.Methods(http.MethodGet).Subrouter()
+
+	//directly calling the function instead of ServeHttp function
+	getRouter.HandleFunc("/", ph.GetProducts)
+
+	postRouter := sm.Methods(http.MethodPost).Subrouter()
+	postRouter.HandleFunc("/", ph.AddProduct)
+
+	putRouter := sm.Methods(http.MethodPut).Subrouter()
+	putRouter.HandleFunc("/{id:[0-9]+}", ph.UpdateProduct)
+
+	//sm.Handle("/", ph)
 	sm.Handle("/helloWorld", hh)
 	sm.Handle("/goodbye", gg)
 
